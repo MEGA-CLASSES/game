@@ -44,9 +44,18 @@ img:hover{
    justify-content: center;
    align-items: center; 
    gap: 10rem;
-   margin: 6rem;
+   margin-top: 5rem;
+   margin-top: 2rem;
    font-size: 2rem;
 }
 #user-score,#computer-score{
     font-size: 4rem;
+}
+#msg{
+ font-size: 2rem;
+ background-color: black;
+ display: inline-flex;
+ padding: 1rem;
+ margin-top: 2rem;
+ border-radius: 1rem;
 }
