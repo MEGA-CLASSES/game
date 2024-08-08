@@ -7,15 +7,14 @@ let com=0;
 
 //choices.forEach((choice)=>choice.addEventListener("click",()=>console.log(choice.id)))
 //the above line of code is used to check how the object that is clicked is accessed
+//=========================define handler function========
+const handler=(choice)=>{  winner(choice.currentTarget)
 
+                         }
+ 
 //-------------------adding event listners to every choice---------
-choices.forEach(choice=>{
-                        choice.addEventListener("click", ()=>{
-                                                                winner(choice);
-                                                             }
-                                                  )
-       }
-                 )
+choices.forEach(choice=>{choice.addEventListener("click", handler)})
+                                                             
  //-------------------------------winner function----------------------- 
  
  function winner(choice)
@@ -55,7 +54,7 @@ choices.forEach(choice=>{
          function updateWin(userWin){
                                      if(userWin){ 
                                                  userScore.innerText=++usr;
-                                                 msg.innerText="you beats computer"
+                                                 msg.innerText="you beat computer"
                                                  }
                                       else{ ;
                                         compScore.innerText=++com;
@@ -63,13 +62,15 @@ choices.forEach(choice=>{
                                           }                     
                    if(userScore.innerText==5||compScore.innerText==5)
                      { if(userScore.innerText==5)
-                       {msg.innerText="Congratulation you have won the game"
+                       {msg.innerText="Congratulation you have won the game.Refresh to play again"
                        msg.style.backgroundColor="green";
                        }
                        else {
-                             msg.innerText="Sorry! you have lost the game";
+                             msg.innerText="Sorry! you have lost the game.Refresh the page and try again";
                              msg.style.backgroundColor="red";   
                             }
-                              console.log(fun);
+                            choices.forEach(choice=>{
+                                    choice.removeEventListener("click",  handler)});
+                                    
                                } 
-                                  }          
+                                        }           
